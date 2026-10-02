@@ -21,12 +21,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Urbanist',
       ),
-      // home: const SignInScreen(),
+      home: const SignInScreen(),
       // home: const SignUpScreen(),
       // home: const HomeScreen(),
       // home: const DetailScreen(),
       // home: const FavoriteScreen(),
-      home: const ProfileScreen(),
+      // home: const ProfileScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
