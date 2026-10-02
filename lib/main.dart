@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'screens/signin_screen.dart';
-import 'screens/signup_screen.dart';
+import 'package:anime_verse/screens/detail_screens.dart';
+import 'package:anime_verse/screens/favorite_screen.dart';
+import 'package:anime_verse/screens/home_screen.dart';
+import 'package:anime_verse/screens/profile_screen.dart';
+import 'package:anime_verse/screens/signin_screen.dart';
+import 'package:anime_verse/screens/signup_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,18 +13,20 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Anime Verse',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
-          brightness: Brightness.dark,
-        ),
-        useMaterial3: true,
+        fontFamily: 'Urbanist',
       ),
-      home: const SignUpScreen(),
+      // home: const SignInScreen(),
+      // home: const SignUpScreen(),
+      // home: const HomeScreen(),
+      // home: const DetailScreen(),
+      // home: const FavoriteScreen(),
+      home: const ProfileScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
