@@ -19,6 +19,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   flutter_svg: ^2.3.0
+  go_router: ^18.0.2
 
 # Bagian dev_dependencies (paket yang hanya dibutuhkan saat development/testing)
 dev_dependencies:

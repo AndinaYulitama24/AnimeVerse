@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:anime_verse/screens/detail_screens.dart';
-import 'package:anime_verse/screens/favorite_screen.dart';
-import 'package:anime_verse/screens/home_screen.dart';
-import 'package:anime_verse/screens/profile_screen.dart';
-import 'package:anime_verse/screens/signin_screen.dart';
-import 'package:anime_verse/screens/signup_screen.dart';
-
+import 'config/routes.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -16,17 +10,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Anime Verse',
       theme: ThemeData(
         fontFamily: 'Urbanist',
       ),
-      home: const SignInScreen(),
-      // home: const SignUpScreen(),
-      // home: const HomeScreen(),
-      // home: const DetailScreen(),
-      // home: const FavoriteScreen(),
-      // home: const ProfileScreen(),
+      routerConfig: createRouter(),
       debugShowCheckedModeBanner: false,
     );
   }

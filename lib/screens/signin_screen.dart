@@ -1,12 +1,17 @@
+import 'package:anime_verse/config/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import '../widgets/app_scaffold.dart';
+
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
+
     return AppScaffold(
       body: LayoutBuilder(
         builder: (context, constraints) {
@@ -21,7 +26,6 @@ class SignInScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(height: screenHeight * 0.14),
-                    // Signin titel
                     Text(
                       'Welcome Back!',
                       style: TextStyle(
@@ -32,7 +36,6 @@ class SignInScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: screenHeight * 0.01),
-
                     Text(
                       'Sign in to continue your anime journey',
                       style: TextStyle(
@@ -44,6 +47,7 @@ class SignInScreen extends StatelessWidget {
                     ),
                     SizedBox(height: screenHeight * 0.05),
 
+                    //Text Field Email
                     TextField(
                       decoration: InputDecoration(
                         labelText: 'Email',
@@ -66,6 +70,8 @@ class SignInScreen extends StatelessWidget {
                       keyboardType: TextInputType.emailAddress,
                     ),
                     SizedBox(height: screenHeight * 0.02),
+
+                    //Text Field Password
                     TextField(
                       decoration: InputDecoration(
                         labelText: 'Password',
@@ -91,6 +97,7 @@ class SignInScreen extends StatelessWidget {
                     ),
                     SizedBox(height: screenHeight * 0.01),
 
+                    //Forgot Password
                     Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
@@ -106,12 +113,14 @@ class SignInScreen extends StatelessWidget {
                     ),
                     SizedBox(height: screenHeight * 0.03),
 
+                    //Sign In Button
                     SizedBox(
                       width: double.infinity,
                       height: screenHeight * 0.075,
                       child: ElevatedButton(
                         onPressed: () {
                           // TODO: Implement sign in functionality
+                          context.go(AppRoutes.home);
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue.withValues(alpha: 0.8),
@@ -130,6 +139,7 @@ class SignInScreen extends StatelessWidget {
                     ),
                     SizedBox(height: screenHeight * 0.03),
 
+                    // Or Divider
                     Row(
                       children: [
                         Expanded(child: Divider(color: Colors.white.withValues(alpha: 0.3),
@@ -145,6 +155,7 @@ class SignInScreen extends StatelessWidget {
                     ),
                     SizedBox(height: screenHeight * 0.03),
 
+                    // Google Sign In Button
                     SizedBox(
                       width: double.infinity,
                       height: screenHeight * 0.075,
@@ -174,6 +185,7 @@ class SignInScreen extends StatelessWidget {
                     ),
                     SizedBox(height: screenHeight * 0.04),
 
+                    //Don't have an account? Sign Up
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -185,6 +197,7 @@ class SignInScreen extends StatelessWidget {
                         TextButton(
                           onPressed: () {
                             // TODO: Navigate to sign up screen
+                            context.go(AppRoutes.signUp);
                           },
                           child: Text(
                             'Sign Up',
